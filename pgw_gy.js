@@ -606,9 +606,6 @@ const pgw = diameter.createConnection(clientOptions, () => {
         ['Product-Name', 'Node.js UGW']
     ]);
     //console.log(`${Array.isArray(cer.body)}`);
-    //console.log(`${findIndex(cer.body, 'Session-Id')}`);
-    let sididx = findIndex(cer.body, 'Session-Id');
-    if ( sididx != -1 ) cer.body.splice(sididx, 1);
     connection.sendRequest(cer).then((cea) => {
         const ceaOriginHost = findValue(cea.body, 'Origin-Host');
         const ceaOriginRealm = findValue(cea.body, 'Origin-Realm');
